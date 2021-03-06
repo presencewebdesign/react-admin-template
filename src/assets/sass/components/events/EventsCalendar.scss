@@ -1,0 +1,119 @@
+﻿.o-event-calendar {
+   padding: 1.5em 2em;
+
+   .react-calendar {
+      width: auto;
+      border: none;
+      background: none;
+
+      &__navigation {
+         &__arrow {
+            color: $sb-grey;
+            flex-basis: 1 / 7 * 100%;
+         }
+
+         &__label {
+            color: $sb-blue;
+            text-transform: uppercase;
+         }
+
+         &__arrow,
+         &__label {
+            background-color: transparent;
+            border: none;
+            font-weight: bold;
+            padding-bottom: 0.75em;
+            padding-top: 0.75em;
+         }
+
+         &__prev2-button,
+         &__next2-button {
+            display: none;
+         }
+      }
+
+      &__month-view {
+         &__weekdays {
+            color: $sb-blue;
+            font-weight: bold;
+
+            &__weekday {
+               padding-bottom: 0.5em;
+               padding-top: 0.5em;
+               text-align: center;
+            }
+         }
+
+         &__days {
+            &__day {
+               color: $sb-grey;
+               cursor: default !important;
+               font-weight: bold;
+
+               &--neighboringMonth {
+                  color: lighten($sb-grey, 25);
+               }
+
+               $today-size: 2em;
+
+               &--today {
+                  position: relative;
+
+                  > * {
+                     position: relative;
+                  }
+
+                  &::before {
+                     $today-size: 2em;
+                     content: "";
+                     width: $today-size;
+                     height: $today-size;
+                     position: absolute;
+                     left: 50%;
+                     top: 50%;
+                     margin-left: -$today-size / 2;
+                     margin-top: -$today-size / 2;
+                     border-radius: 50%;
+                     background-color: lighten($sb-grey, 40);
+                  }
+               }
+
+               $marker-size: 0.5em;
+
+               &--events {
+                  position: relative;
+
+                  > * {
+                     position: relative;
+                  }
+
+                  &::after {
+                     $marker-size: 0.5em;
+                     content: "";
+                     width: $marker-size;
+                     height: $marker-size;
+                     position: absolute;
+                     left: 50%;
+                     top: 50%;
+                     margin-left: -$marker-size / 2;
+                     margin-top: -$marker-size / 2 + $today-size / 2;
+                     border-radius: 50%;
+                     background-color: $sb-purple;
+                  }
+               }
+            }
+         }
+      }
+
+      &__tile {
+         background-color: transparent;
+         border: none;
+         padding-bottom: 0.5em;
+         padding-top: 0.5em;
+
+         &:focus {
+            outline: none;
+         }
+      }
+   }
+}

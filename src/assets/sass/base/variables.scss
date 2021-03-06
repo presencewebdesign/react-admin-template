@@ -1,0 +1,22 @@
+$sb-blue: #0f1359;
+$sb-purple: #78288c;
+$sb-grey: #648494;
+
+$light: white;
+$panel-light: #f5f6fd;
+$panel-dark: #ece9f9;
+
+$ff-lead-heavy: "proxima_nova_excn_thextrabold", Helvetica, sans-serif;
+$ff-lead-light: "proxima_nova_excn_ltlight", Helvetica, sans-serif;
+/*$ff-body: "Lato", Helvetica, sans-serif;*/
+$ff-body: "Montserrat", Helvetica, sans-serif;
+
+$theme-colors: (
+   "primary": $sb-purple,
+   "secondary": $sb-blue,
+   "neutral": $sb-grey,
+   "light": $light,
+   "panel-light": $panel-light,
+   "panel-dark": $panel-dark,
+);
+/*$font-sizes: ( 1: $h1-font-size, 2: $h2-font-size, 3: $h3-font-size, 4: $h4-font-size, 5: $h5-font-size, 6: $h6-font-size );*/

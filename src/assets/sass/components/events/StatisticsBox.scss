@@ -1,0 +1,43 @@
+.statbox {
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   margin-bottom: 20px;
+   text-align: center;
+   &__title {
+      color: $sb-grey;
+      font-weight: bold;
+   }
+   &__total {
+      color: $sb-purple;
+      font-size: 60px;
+      font-weight: bold;
+   }
+   &__groupresults {
+      border-top: solid 1px $panel-dark;
+      background-color: $panel-light;
+      .col {
+         margin: 10px 0 10px;
+         p {
+            padding: 0px;
+            margin: 0px;
+         }
+         p.title {
+            font-weight: 100;
+            font-size: 12px;
+         }
+         p.value {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+         }
+      }
+      .col:first-child() {
+         border-right: solid 1px $panel-dark;
+      }
+      .col:last-child() {
+         border-left: solid 1px $panel-dark;
+      }
+      .col.noborder {
+         border-left: none;
+      }
+   }
+}

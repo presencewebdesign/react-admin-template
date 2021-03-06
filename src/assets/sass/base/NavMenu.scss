@@ -1,0 +1,54 @@
+﻿.open {
+   background-color: $sb-purple im !important;
+}
+
+a.navbar-brand {
+   white-space: normal;
+   text-align: center;
+   word-break: break-all;
+}
+
+.nav-item {
+   &.open {
+      background-color: $sb-purple;
+   }
+}
+
+.nav-link {
+   border-left-width: 5px;
+   border-left-style: solid;
+   color: $light;
+
+   &.active {
+      background-color: $light;
+      border-left-color: $sb-purple;
+      color: $sb-blue;
+
+      .nav-icon {
+         color: $sb-purple;
+      }
+   }
+
+   &:not(.active) {
+      border-left-color: transparent;
+
+      &:hover {
+         background-color: rgba(255, 255, 255, 0.2);
+         color: $light;
+      }
+   }
+}
+
+html {
+   font-size: 14px;
+}
+
+@media (min-width: 768px) {
+   html {
+      font-size: 16px;
+   }
+}
+
+.box-shadow {
+   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
