@@ -1,16 +1,16 @@
 // Base
 @import "./base/variables";
-@import "./base/main";
 @import "./base/NavMenu";
 @import "./base/custom";
 @import "./base/transitions";
+@import "./base/layout.scss";
 
 // Theme
-@import "./base/layout.scss";
+@import "./theme";
 
 // Mixins
 
-// ALL COMPONENTS
+// CUSTOM COMPONENTS
 // Users
 @import "./components/users/User.scss";
 

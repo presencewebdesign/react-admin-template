@@ -9,9 +9,53 @@ const EventsCalendar: React.FC = () => {
    const dispatch: Dispatch<any> = useDispatch()
    const now = new Date()
 
+   const calendar = {
+      results: [
+         {
+            id: 0,
+            event_id: 1,
+            date: "2021-03-02",
+            eventClasses: "optionalEvent",
+            title: "test event",
+            description: "This is a test description of an event",
+         },
+         {
+            id: 1,
+            event_id: 1,
+            date: "2021-03-21",
+            title: "test event",
+            description: "This is a test description of an event",
+            data: "you can add what ever random data you may want to use later",
+         },
+      ],
+   }
+
    const onChange = (date: any) => {
       dispatch(addEvent(date))
    }
+
+   const markCalendarArray = async () => {
+      const calendarResults = calendar.results.map((e: any) => {
+         console.log("Check ", e.date)
+         const changeDate = new Date(e.date)
+         const setdate = format(changeDate, "yyyy-MM-dd")
+         return setdate
+      })
+      setCalendar(calendarResults)
+      return calendarResults
+   }
+
+   const [calendarDates, setCalendar] = useState<Calendar[]>([])
+   console.log(
+      "🚀 ~ file: EventsCalendar.tsx ~ line 49 ~ calendarDates",
+      calendarDates
+   )
+
+   useEffect(() => {
+      markCalendarArray()
+   }, [])
+
+   //const mark = ["2021-03-21", "2021-03-02"]
 
    return (
       <div className="o-event-calendar">
@@ -19,6 +63,8 @@ const EventsCalendar: React.FC = () => {
             //activeStartDate={startOfMonth(props.date)}
             formatShortWeekday={(locale, date) => format(date, "EEEEE")}
             tileClassName={({ date, view }) => {
+               const viewDate = format(date, "yyyy-MM-dd").toString()
+
                let css: string[] = []
                if (view === "month" && isSameDay(date, now)) {
                   css.push(
@@ -26,12 +72,19 @@ const EventsCalendar: React.FC = () => {
                   )
                }
 
-               // TODO: add this class when there are events
-               if (Math.floor(Math.random() * 10) % 2 === 1) {
+               if (calendarDates.find((x) => x === viewDate)) {
+                  console.log("date ", date)
                   css.push(
                      "react-calendar__tile react-calendar__month-view__days__day--events"
                   )
                }
+
+               // TODO: add this class when there are events
+               // if (getCalendar(date)) {
+               //    css.push(
+               //       "react-calendar__tile react-calendar__month-view__days__day--events"
+               //    )
+               // }
                return css
             }}
             prevLabel={<ChevronLeft width={16} height={16} />}

@@ -11,13 +11,7 @@ import { IEvent } from "../../store/models/event.interface"
 
 const EventsList: React.FC = () => {
    const selectedDate: IEvent = useSelector((state: IStateType) => state.event)
-   console.log(
-      "🚀 ~ file: EventsList.tsx ~ line 20 ~ selectedDate",
-      selectedDate
-   )
    const newDate = new Date(selectedDate.date)
-   console.log("🚀 ~ file: EventsList.tsx ~ line 19 ~ newDate", newDate)
-
    const [event, setEvents] = useState<Event[]>([])
    const [monthName, setMonthName] = useState<String>("")
 

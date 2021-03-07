@@ -1,0 +1,58 @@
+[
+   {
+      "id": 0,
+      "event_id": 1,
+      "date": "2021-03-02T15:44:09-05:00",
+      "eventClasses": "optionalEvent",
+      "title": "test event",
+      "description": "This is a test description of an event"
+   },
+   {
+      "id": 1,
+      "event_id": 1,
+      "date": "2021-03-21T15:44:14-05:00",
+      "title": "test event",
+      "description": "This is a test description of an event",
+      "data": "you can add what ever random data you may want to use later"
+   },
+   {
+      "id": 2,
+      "event_id": 1,
+      "date": "2021-03-22",
+      "title": "test event",
+      "description": "This is a test description of an event",
+      "data": "you can add what ever random data you may want to use later"
+   },
+   {
+      "id": 3,
+      "event_id": 1,
+      "date": "2021-03-23",
+      "title": "test event",
+      "description": "This is a test description of an event",
+      "data": "you can add what ever random data you may want to use later"
+   },
+   {
+      "id": 4,
+      "event_id": 2,
+      "date": "2021-03-10",
+      "title": "test event",
+      "description": "This is a test description of an event",
+      "data": "you can add what ever random data you may want to use later"
+   },
+   {
+      "id": 5,
+      "event_id": 2,
+      "date": "2021-04-11",
+      "title": "test event",
+      "description": "This is a test description of an event",
+      "data": "you can add what ever random data you may want to use later"
+   },
+   {
+      "id": 6,
+      "event_id": 3,
+      "date": "2021-04-20",
+      "title": "test event",
+      "description": "This is a test description of an event",
+      "data": "you can add what ever random data you may want to use later"
+   }
+]
