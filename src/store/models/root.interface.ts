@@ -1,46 +1,51 @@
-import { IProduct, ProductModificationStatus } from "./product.interface";
-import { INotification } from "./notification.interface";
-import { IUser } from "./user.interface";
-import { IOrder } from "./order.interface";
-import { IAccount } from "./account.interface";
+import { IProduct, ProductModificationStatus } from "./product.interface"
+import { INotification } from "./notification.interface"
+import { IUser } from "./user.interface"
+import { IOrder } from "./order.interface"
+import { IAccount } from "./account.interface"
+import { IEvent } from "./event.interface"
 
 export interface IRootPageStateType {
-    area: string;
-    subArea: string;
+   area: string
+   subArea: string
 }
 
 export interface IRootStateType {
-    page: IRootPageStateType;
+   page: IRootPageStateType
 }
 export interface IStateType {
-    root: IRootStateType;
-    products: IProductState;
-    notifications: INotificationState;
-    users: IUserState;
-    orders: IOrdersState;
-    account: IAccount;
+   root: IRootStateType
+   products: IProductState
+   notifications: INotificationState
+   users: IUserState
+   orders: IOrdersState
+   account: IAccount
+   event: IEventState
 }
 
 export interface IProductState {
-    products: IProduct[];
-    selectedProduct: IProduct | null;
-    modificationState: ProductModificationStatus;
+   products: IProduct[]
+   selectedProduct: IProduct | null
+   modificationState: ProductModificationStatus
 }
 
 export interface IActionBase {
-    type: string;
-    [prop: string]: any;
+   type: string
+   [prop: string]: any
 }
 
 export interface IOrdersState {
-    orders: IOrder[];
+   orders: IOrder[]
 }
 
 export interface INotificationState {
-    notifications: INotification[];
+   notifications: INotification[]
+}
+export interface IEventState {
+   date: Date
 }
 
 export interface IUserState {
-    users: IUser[];
-    admins: IUser[];
+   users: IUser[]
+   admins: IUser[]
 }
